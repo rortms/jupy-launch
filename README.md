@@ -10,15 +10,21 @@ of elisp.
 # To use
 Place this somewhere in your configuration file, make sure jupy-launch.el is in your load path.
 
-`(autoload 'jupy-launch "jupy-launch" "Startup Jupyter server in buffer" t)
+```
+(autoload 'jupy-launch "jupy-launch" "Startup Jupyter server in buffer" t)
+```
 
 
 It is assumed that you have set up pyvenv for your emacs. Then to launch,
 
-`M-x jupy-launch
+```
+M-x jupy-launch
+```
 
 The minibuffer will prompt you to enter the directory you want to work from, then the python environment you want to work in. Then,
 
-`M-x ein-get-psswd-and-login
+```
+M-x ein-get-psswd-and-login
+```
 
 Will log you in and open the EIN directory menu. Hope its helpful!
