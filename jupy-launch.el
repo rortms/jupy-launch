@@ -7,7 +7,6 @@
   
   (interactive)
   (ansi-term "/bin/bash")
-  ;; (switch-to-buffer "*ansi-term*")
 
   (insert (concat "cd " (read-directory-name "Enter work directory: ")))
   (term-send-input)
@@ -17,23 +16,22 @@
   (insert "jupyter notebook --no-browser")
   (term-send-input)
   (term-line-mode)
-  ;; (beginning-of-buffer)
-
   )
 (provide 'jupy-launch)
 
 (defun ein-get-psswd-and-login ()
-  "This function automates killing and yanking the jupyter server password from an ansi termnal in line-mode. 
+  "This function automates killing and yanking the jupyter server password from an ansi terminal. 
 Hacky and intended to be used only after calling jupy-launch: Notebook login will occur in default port."
   (interactive)
   (let ( (jup-buffer (get-buffer "*ansi-term*")))
     (if jup-buffer
         (progn
           (switch-to-buffer "*ansi-term*")
-          (term-line-mode)
+          (term-char-mode)
           (beginning-of-buffer)
           (search-forward "=")
           (kill-line)
+          (end-of-buffer)          
           (switch-to-buffer "*scratch*")
           (ein:notebooklist-login 8888 (current-kill 0))
           (ein:notebooklist-open 8888)
