@@ -35,6 +35,10 @@ Hacky and intended to be used only after calling jupy-launch: Notebook login wil
           (switch-to-buffer "*scratch*")
           (ein:notebooklist-login 8888 (current-kill 0))
           (ein:notebooklist-open 8888)
+          
+          ;; disable "next-input-history" command, is deleting cells          
+          (define-key ein:notebook-mode-map (kbd "M-n") nil)
+          
           )))
   )
 
