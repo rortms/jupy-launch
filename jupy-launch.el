@@ -1,5 +1,5 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Functions to load ein notebooks faster
+;; Function to load ein notebooks faster
 
 (defun jupy-launch ()
   "Prompt user for desired work directory and python environment, then launch
