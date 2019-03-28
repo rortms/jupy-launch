@@ -8,6 +8,9 @@ basically perform those steps. Maybe this functionality was already built into E
 of elisp.
 
 # To use
+
+Note: Tested only on emacs 26.1
+
 Place this somewhere in your configuration file, make sure jupy-launch.el is in your load path.
 
 ```
@@ -24,7 +27,8 @@ M-x jupy-launch
 The minibuffer will prompt you to enter the directory you want to work from, then the python environment you want to work in. Then,
 
 ```
-M-x ein-get-psswd-and-login
+M-x ein:notebooklist-login
 ```
 
-Will log you in and open the EIN directory menu. Hope its helpful!
+will log you in and open the EIN directory menu. Hope its helpful!
+
